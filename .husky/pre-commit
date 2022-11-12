@@ -8,11 +8,6 @@ yarn test || (
   false;
 )
 
-yarn run format:check || (
-  echo '❌💅🏿 Prettier check Failed!!! ❌';
-  false;
-)
-
 yarn run link:check || (
   echo '❌⭕ ESLint check Failed!!! ❌';
   false;
