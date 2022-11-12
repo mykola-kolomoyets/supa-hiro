@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '🤔🤔🤔 Trying to check basic params before commit...'
+
+yarn test || (
+  echo '❌🧪 Tests Failed!!! ❌';
+  false;
+)
+
+yarn run format:check || (
+  echo '❌💅🏿 Prettier check Failed!!! ❌';
+  false;
+)
+
+yarn run link:check || (
+  echo '❌⭕ ESLint check Failed!!! ❌';
+  false;
+)
+
+yarn run types:check || (
+  echo '❌💂‍♂️ Type check Failed!!! ❌';
+  false;
+)
+
+yarn build || (
+  echo '❌👷🔨❌ Build Failed!!! ❌';
+  false;
+)
+
+
+
