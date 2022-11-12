@@ -1,0 +1,4 @@
+process.env.NEXT_PUBLIC_SUPABASE_URL =
+  "https://nyvxhyvegpsrvrulpwny.supabase.co";
+process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55dnhoeXZlZ3BzcnZydWxwd255Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgyNTI4NzAsImV4cCI6MTk4MzgyODg3MH0.Sa6O0ueL9zp7lso49rWFIiMMtUgGXn1chFxk0mik-Aw";

@@ -1,0 +1,15 @@
+.app {
+  margin: 0;
+  padding: 24px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  
+  &__title {
+    margin: 0 0 24px 0;
+    padding: 0;
+  }
+}
