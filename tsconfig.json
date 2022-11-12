@@ -19,7 +19,7 @@
       "@supabase-api": ["supabase/index"],
       "@components/*": ["components/*"],
       "@api/*": ["api/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

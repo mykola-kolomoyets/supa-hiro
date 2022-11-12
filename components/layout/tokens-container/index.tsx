@@ -37,16 +37,14 @@ export const TokensContainer: FC = () => {
     tokens.forEach((token) => {
       const tokenMetadata = tokensMetadataResponse.data.find(
         (item) => item.nft_token_id === token.id
-      );
+      )!;
 
-      if (tokenMetadata) {
-        const complexTokenItem: ComplexTokenItem = {
-          ...token,
-          ...tokenMetadata,
-        };
+      const complexTokenItem: ComplexTokenItem = {
+        ...token,
+        ...tokenMetadata,
+      };
 
-        result.push(complexTokenItem);
-      }
+      result.push(complexTokenItem);
     });
 
     return result;
