@@ -1,28 +1,6 @@
-import { formatDate, getPagination, isValidDate, or } from "@utils/functions";
+import { formatDate, isValidDate, or } from "@utils/functions";
 
 describe("functions", () => {
-  describe("getPagination", () => {
-    it("with page:1, limit:10 -> {from: 0, to: 10}", () => {
-      const page = 1;
-      const limit = 10;
-
-      const { from, to } = getPagination(page, limit);
-
-      expect(from).toEqual(0);
-      expect(to).toEqual(10);
-    });
-
-    it("with page:2, limit:10 -> {from: 10, to: 20}", () => {
-      const page = 2;
-      const limit = 10;
-
-      const { from, to } = getPagination(page, limit);
-
-      expect(from).toEqual(10);
-      expect(to).toEqual(20);
-    });
-  });
-
   describe("or", () => {
     it("accepts empty array", () => {
       const args: boolean[] = [];

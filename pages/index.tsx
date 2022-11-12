@@ -1,11 +1,20 @@
 import Head from "next/head";
 
 import { TokensContainer, QueryProvider } from "@components/layout";
+import { HiroConnectWalletButton } from "@components/ui";
 
 import styles from "../styles/app.module.scss";
+import { useHiroWallet, useHydrated } from "@utils/hooks";
+import { useMemo } from "react";
 
 export default function Home() {
-  return (
+  const { getUserData, isConnected } = useHiroWallet();
+
+  const isHydrated = useHydrated();
+
+  const userWalletData = useMemo(() => getUserData(), [getUserData]);
+
+  return isHydrated ? (
     <QueryProvider>
       <div>
         <Head>
@@ -17,11 +26,23 @@ export default function Home() {
         <main className={styles.app}>
           <header className={styles.app__header}>
             <h1 className={styles.app__title}>Welcome to Supa-Hiro</h1>
+
+            <HiroConnectWalletButton />
           </header>
+
+          {isConnected && userWalletData ? (
+            <div>
+              <h4>Your wallet:</h4>
+              <p>mainnet: {userWalletData[0]}</p>
+              <p>testnet: {userWalletData[1]}</p>
+            </div>
+          ) : (
+            <p>No wallet connected...</p>
+          )}
 
           <TokensContainer />
         </main>
       </div>
     </QueryProvider>
-  );
+  ) : null;
 }
